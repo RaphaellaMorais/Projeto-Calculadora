@@ -6,7 +6,7 @@
   "scripts": {
     "sass": "sass --watch --style=compressed assets/scss:assets/css",
     "tsc": "tsc --watch",
-    "dev": "concurrently \\"
+    "dev": "concurrently \"npm run sass\" \"npm run tsc\""
   },
   "keywords": [
     "css",

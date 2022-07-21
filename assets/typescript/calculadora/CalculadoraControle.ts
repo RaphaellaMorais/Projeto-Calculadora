@@ -21,7 +21,7 @@ export default class CalculadoraControle {
 
     eventosBotoes(): void {
 
-        document.querySelectorAll("#teclado button").forEach(elemento =>{
+        document.querySelectorAll("#teclado button").forEach(elemento => {
 
             elemento.addEventListener("click", (evento: Event) => {
 
@@ -129,3 +129,35 @@ export default class CalculadoraControle {
 
     }
 }
+
+/*É uma boa prática exportar sempre a classe com o mesmo nome do arquivo.
+
+-Essa classe é como se forsse a sala de controle da nossa calculadora;
+
+-Todas as ações vão estar dentro dela mas ela vai delegar muitas funções p outras classes tbm;
+
+-void (não retorna nada);
+
+- live server é um servidor local p visualizar o projeto;
+- 
+
+
+-O método .forEach é usado para percorrer arrays, 
+mas usa uma função de modo diferente do "laço for" tradicional. 
+O método forEach passa uma função de callback para cada elemento do array 
+juntamente aos seguintes parâmetros: Valor atual (obrigatório) - O valor do elemento atual do array.
+
+
+- .querySelectorAll - Retorna uma lista de elementos presentes no documento que coincidam com o grupo de seletores especificado.
+
+
+A condicional switch avalia uma expressão, combinando o valor da expressão para um cláusula case,
+ e executa as instruções  associadas ao case.
+
+
+
+A propriedade target obtém o elemento no qual o evento ocorreu originalmente
+A propriedade de evento de destino retorna o elemento que acionou o evento. 
+
+
+*/

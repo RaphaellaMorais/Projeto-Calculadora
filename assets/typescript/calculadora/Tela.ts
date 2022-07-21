@@ -14,7 +14,7 @@ export default class Tela {
             valor = "ERRO";
         }
 
-        if(this.elemento) {
+        if (this.elemento) {
 
             this.elemento.innerHTML = valor.toString().replace(".",",");
         }

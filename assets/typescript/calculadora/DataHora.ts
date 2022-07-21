@@ -40,3 +40,5 @@ export default class DataHora {
 
     }
 }
+
+/*Retorno primeiro o elemento do documento que corresponde ao grupo especificado de especificadores. */

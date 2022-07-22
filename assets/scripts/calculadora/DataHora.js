@@ -8,9 +8,7 @@ export default class DataHora {
     renderizar() {
         const dataAtual = new Date();
         const dia = dataAtual.getDate();
-        const mes = dataAtual.toLocaleDateString("pt-BR", {
-            month: "long"
-        });
+        const mes = dataAtual.toLocaleDateString("pt-BR", { month: "long" });
         const ano = dataAtual.getFullYear();
         const hora = dataAtual.getHours();
         const minuto = dataAtual.getMinutes().toString().padStart(2, '0');

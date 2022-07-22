@@ -6,14 +6,14 @@ export default class Operacao {
 
     private onCalculado: any;
 
-    constructor(
-        opts: OperacaoOpcoes,
-        private operacao: string[] = []
-    ) {
+    constructor(opts: OperacaoOpcoes, private operacao: string[] = []) {
 
         this.onCalculado = opts.onCalculado;
 
     }
+
+    /*Pesquisar o funcionamento do construtor dentro de uma class, se ele exitir é obrigatório executar o método que ele representa;
+    Funcionamento e explos da interface; */
 
     adicionar(valor: string): number {
 

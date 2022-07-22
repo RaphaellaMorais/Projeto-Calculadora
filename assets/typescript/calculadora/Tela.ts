@@ -27,3 +27,4 @@ export default class Tela {
 
     }
 }
+ /*pesquisar sobre operador ternário = if em uma única linha */

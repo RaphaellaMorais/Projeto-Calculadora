@@ -79,3 +79,8 @@ export default class Operacao {
 /*O método substr()retorna uma parte da string O especificado no índice especificado e
  estende-se posteriormente por um determinado número. */
 
+/*Construtores são basicamente funções de inicialização de uma classe, 
+as quais são invocadas no momento em que objetos desta classe são criadas. 
+Eles permitem inicializar campos internos da classe e 
+alocar recursos que um objeto da classe possa demandar. */
+

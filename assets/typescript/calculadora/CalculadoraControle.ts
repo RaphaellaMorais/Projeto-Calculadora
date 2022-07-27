@@ -130,7 +130,9 @@ export default class CalculadoraControle {
     }
 }
 
-/*É uma boa prática exportar sempre a classe com o mesmo nome do arquivo.
+/*Uma classe é uma representação de um tipo de objeto. Uma estrutura que descreve o objeto;
+
+É uma boa prática exportar sempre a classe com o mesmo nome do arquivo.
 
 -Essa classe é como se forsse a sala de controle da nossa calculadora;
 

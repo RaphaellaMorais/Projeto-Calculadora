@@ -1,0 +1,41 @@
+/*Estudo de classes:
+
+1- Forma mais longa: Definindo o atributo e o tipo do atributo e depois no construtor definindo o valor;
+
+export class Empresa {   //export para uma classe que será exportada;
+    public readonly nome:string; //publico porq vai poder ser acessado tanto dentro, quanto fora da classe;
+            //readonly porq seu valor não vai poder ser alterado, apenas lido;
+    private readonly colaboradores: Colaborador[] = [];
+    protected readonly cnpj: string;
+
+    //não é necessário colocar public 
+
+    constructor(nome: string, cnpj: string) { //recebe valores de argumentos, parametros, q no caso eu to dizendo que o q eu receber em nome aqui vai para nome da classe.
+        this.nome = nome; // para acessar; 
+        this.cnpj = cnpj;
+    }
+
+    adicionaColaborador(colaborador: colaborador): void {
+        this.colaboradores.push(colaborador);
+    }
+}
+
+2 - Forma mais curta, já faz tudo q foi feito acima:
+
+export class Colaborador {
+    constructor(public readonly nome: string, public readonly sobrenome: string) {}
+}
+
+const empresa1 = new Empresa("Udemy", "11.111.111/0001-11"); // criando um objeto;
+const colaborador1 = new Colaborador("Luiz", "Otávio");
+const colaborador2 = new Colaborador("Maria", "Miranda");
+const colaborador3 = new Colaborador("João", "Vieira");
+
+empresa1.adicionaColaborador(colaborador1);
+empresa1.adicionaColaborador(colaborador2);
+empresa1.adicionaColaborador(colaborador3);
+
+
+console.log(empresa1);
+
+*/

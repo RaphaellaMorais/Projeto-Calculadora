@@ -78,3 +78,4 @@ export default class Operacao {
 
 /*O método substr()retorna uma parte da string O especificado no índice especificado e
  estende-se posteriormente por um determinado número. */
+

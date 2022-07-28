@@ -4,7 +4,7 @@ import Tela from "./Tela.js";
 export default class CalculadoraControle {
     constructor(tela = new Tela(), operacao = new Operacao({
         onCalculado: (resultado) => this.tela.conteudo = resultado
-    })) {
+    }, [], tela)) {
         this.tela = tela;
         this.operacao = operacao;
         new DataHora();
@@ -36,6 +36,7 @@ export default class CalculadoraControle {
                     case "ponto":
                         break;
                     case "limpar":
+                        this.operacao.limparOperacao();
                         break;
                     case "desfazer":
                         break;
@@ -53,7 +54,6 @@ export default class CalculadoraControle {
     }
     adicionarOperacao(valor) {
         this.operacao.adicionar(valor);
-        console.log(this.operacao.length);
     }
     adicionarNumero(numero) {
         if (isNaN(Number(this.operacao.ultimaPosicao))) {

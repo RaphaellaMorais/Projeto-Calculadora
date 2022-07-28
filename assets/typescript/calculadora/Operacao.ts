@@ -1,3 +1,5 @@
+import Tela from "./Tela";
+
 interface OperacaoOpcoes {
     onCalculado: any;
 }
@@ -6,7 +8,7 @@ export default class Operacao {
 
     private onCalculado: any;
 
-    constructor(opts: OperacaoOpcoes, private operacao: string[] = []) {
+    constructor(opts: OperacaoOpcoes, private operacao: string[] = [], private tela: Tela) {
 
         this.onCalculado = opts.onCalculado;
 
@@ -54,6 +56,13 @@ export default class Operacao {
         this.operacao = [resultado];
 
         this.onCalculado(resultado);
+
+    }
+
+    limparOperacao(): void{
+
+        this.tela.conteudo = "0";
+        this.operacao = [];
 
     }
 

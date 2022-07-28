@@ -9,7 +9,7 @@ export default class CalculadoraControle {
         private tela = new Tela(),
         private operacao = new Operacao({
             onCalculado: (resultado: string) => this.tela.conteudo = resultado
-        })
+        }, [], tela)
     ) {
 
 
@@ -55,6 +55,7 @@ export default class CalculadoraControle {
                     break;
 
                     case "limpar":
+                        this.operacao.limparOperacao();
 
                     break;
 
@@ -87,7 +88,7 @@ export default class CalculadoraControle {
 
         this.operacao.adicionar(valor);
 
-        console.log(this.operacao.length);
+        // console.log(this.operacao.length);
     }
 
     adicionarNumero(numero: number): void {
@@ -128,6 +129,15 @@ export default class CalculadoraControle {
         }    
 
     }
+
+    // limparOperacao(): void{
+
+    //     this.tela.conteudo = "0";
+    //     this.operacao.operacao = [];
+
+    // }
+
+
 }
 
 /*Uma classe é uma representação de um tipo de objeto. Uma estrutura que descreve o objeto;

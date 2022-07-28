@@ -1,6 +1,7 @@
 export default class Operacao {
-    constructor(opts, operacao = []) {
+    constructor(opts, operacao = [], tela) {
         this.operacao = operacao;
+        this.tela = tela;
         this.onCalculado = opts.onCalculado;
     }
     adicionar(valor) {
@@ -28,6 +29,10 @@ export default class Operacao {
         }
         this.operacao = [resultado];
         this.onCalculado(resultado);
+    }
+    limparOperacao() {
+        this.tela.conteudo = "0";
+        this.operacao = [];
     }
     get ultimaPosicao() {
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";

@@ -1,9 +1,9 @@
 export default class DataHora {
 
-    constructor(
+    constructor( // método - constructor recebe os elementos q vão estar nesse contexto - no caso dois atributos
         private elementoData: HTMLDivElement | null = document.querySelector("#datetime > div:nth-child(2)"),
-        private elementoHora: HTMLTimeElement | null = document.querySelector("#datetime time") 
-    ) {
+        private elementoHora: HTMLTimeElement | null = document.querySelector("#datetime time") //DOM possui uma serie de interfaces voltadas para elementos/acesso a elementos do HTML. 
+    ) {                                                                                         //Declaramos a nossa propriedade/atributo e já definimos o valor p ela;
         this.renderizar();
         setInterval(() => this.renderizar(), 1000);
     }
@@ -26,7 +26,7 @@ export default class DataHora {
 
     set data(conteudo: string) {
         if (this.elementoData) {
-            this.elementoData.innerHTML = conteudo;
+            this.elementoData.innerHTML = conteudo; // acessamos a propriedade innerHTML
         }
 
     }

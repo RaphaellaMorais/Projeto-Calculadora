@@ -3,7 +3,7 @@ import Operacao from "./Operacao.js";
 import Tela from "./Tela.js";
 
 
-export default class CalculadoraControle {
+export default class CalculadoraControle {   //Essa classe é como se fosse a sala de controle da calculadora;
 
     constructor(
         private tela = new Tela(),
@@ -60,6 +60,7 @@ export default class CalculadoraControle {
                     break;
 
                     case "desfazer":
+                        this.operacao.desfazerOperacao();
 
                     break;
 

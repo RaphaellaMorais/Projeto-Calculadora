@@ -34,6 +34,10 @@ export default class Operacao {
         this.tela.conteudo = "0";
         this.operacao = [];
     }
+    desfazerOperacao() {
+        this.tela.conteudo;
+        this.operacao.slice;
+    }
     get ultimaPosicao() {
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";
     }

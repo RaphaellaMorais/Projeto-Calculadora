@@ -66,6 +66,12 @@ export default class Operacao {
 
     }
 
+    desfazerOperacao(): void{
+
+        this.tela.conteudo
+        this.operacao.slice    
+    }
+
     get ultimaPosicao(): string {
 
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";

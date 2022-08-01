@@ -39,3 +39,5 @@ empresa1.adicionaColaborador(colaborador3);
 console.log(empresa1);
 
 */
+
+/*Live Server é um servidor local*/

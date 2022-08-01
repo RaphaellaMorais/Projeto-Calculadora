@@ -39,6 +39,7 @@ export default class CalculadoraControle {
                         this.operacao.limparOperacao();
                         break;
                     case "desfazer":
+                        this.operacao.desfazerOperacao();
                         break;
                     case "porcentagem":
                         break;

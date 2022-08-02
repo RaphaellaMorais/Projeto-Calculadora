@@ -68,8 +68,15 @@ export default class Operacao {
 
     desfazerOperacao(): void{
 
-        this.tela.conteudo
-        this.operacao.slice    
+        this.tela.conteudo;
+        this.operacao.pop();
+        console.log(this.tela.conteudo);
+
+        if (this.tela.conteudo.length > 1){
+
+            this.tela.conteudo.replace(0,'');
+
+        }
     }
 
     get ultimaPosicao(): string {

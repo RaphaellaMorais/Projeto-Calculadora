@@ -36,7 +36,11 @@ export default class Operacao {
     }
     desfazerOperacao() {
         this.tela.conteudo;
-        this.operacao.slice;
+        this.operacao.pop();
+        console.log(this.tela.conteudo);
+        if (this.tela.conteudo.length > 1) {
+            this.tela.conteudo.replace(0, '');
+        }
     }
     get ultimaPosicao() {
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";

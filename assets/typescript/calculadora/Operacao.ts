@@ -70,13 +70,46 @@ export default class Operacao {
 
         this.tela.conteudo;
         this.operacao.pop();
-        console.log(this.tela.conteudo);
+
+        //console.log(typeof(this.tela));
+
+        //console.log(typeof(this.tela.conteudo));
+
+
 
         if (this.tela.conteudo.length > 1){
 
-            this.tela.conteudo.replace(0,'');
 
+            const str = this.tela.conteudo;
+
+            const array = JSON.parse("[" + str + "]");
+
+            console.log(typeof());
+
+            usingSplit.pop();
+
+
+
+
+            /*const str = this.tela.conteudo;
+
+            const usingSplit = str.split(",");
+
+            console.log(typeof(usingSplit));
+
+            usingSplit.pop(); */
+            
+            /*var str = this.tela.conteudo;
+
+            [...str];
+            
+            console.log(typeof(str));*/
+
+      
+            //this.tela.conteudo.();
         }
+        
+
     }
 
     get ultimaPosicao(): string {

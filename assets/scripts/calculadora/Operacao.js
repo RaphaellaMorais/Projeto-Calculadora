@@ -37,9 +37,11 @@ export default class Operacao {
     desfazerOperacao() {
         this.tela.conteudo;
         this.operacao.pop();
-        console.log(this.tela.conteudo);
         if (this.tela.conteudo.length > 1) {
-            this.tela.conteudo.replace(0, '');
+            const str = this.tela.conteudo;
+            const array = JSON.parse("[" + str + "]");
+            console.log(typeof ());
+            usingSplit.pop();
         }
     }
     get ultimaPosicao() {

@@ -79,17 +79,15 @@ export default class Operacao {
 
         if (this.tela.conteudo.length > 0){
 
-            const str = this.tela.conteudo;
+            let str = this.tela.conteudo;
 
             const usingSplit = str.split('',12);
 
-            console.log(usingSplit);
-
-             // remove elemento(do final)
+            //console.log(usingSplit);
 
                // while (usingSplit.length > 0) {
 
-                    usingSplit.pop();
+                    usingSplit.pop(); // remove elemento(do final)
 
                    // if (usingSplit.length <= 12) {
                    //     break;
@@ -100,9 +98,11 @@ export default class Operacao {
 
             console.log(usingSplit);
             this.tela.conteudo = usingSplit.join('');
+             
             
-            
+
         
+
 
             //const excluindo = usingSplit.slice(0, 4); 
 
@@ -114,7 +114,6 @@ export default class Operacao {
             
             console.log(typeof(str));*/
 
-      
             //this.tela.conteudo.();
         }
         

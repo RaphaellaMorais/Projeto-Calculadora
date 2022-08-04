@@ -8,20 +8,45 @@ Ela pode definir o tipo de propriedades, os parâmetros esperados por funções 
 
 DETERMINA AS REGRAS QUE O MEU OBJETO DEVE SEGUIR, CRIA UM PADRÃO E NOS OBRIGA A SEGUIR.*/
 
-//Exemplo de uma forma simples de tipagem de uma variável:
+
+interface IEndereco{
+    rua: string;
+    numero: number;
+    bairro: string;
+    cidade: string; 
+}
 
 
-let endereco: {
-    rua: string,
-    numero: number,
-    bairro: string,
-    cidade: string
-};
+let endereco: IEndereco;
 
 endereco = {
-    rua: "Rua 26 de Abril",
+    rua: "Av. Paulista",
     numero:1000,
-    bairro: "Poço",
+    bairro: "Ponta Verde",
     cidade: "Maceió"
 
 };
+
+//Para criar uma interface nos usamos a palavra interface, a seguir damos o nome da nossa interface;
+//Padrão para nome de interface - pascal case(primeira letra do nome maiúscula) e acrescentar um "I";
+ 
+//Outro Exemplo: 
+
+interface ILivro {
+    readonly titulo: string;
+    preco: number;
+    genero: string;
+    dataLancamento?: Date; // com a ? eu defino q essa propriedade é opcional;
+}
+
+let livro: ILivro = {
+    titulo: "Um lugar bem longe daqui",
+    preco: 70,
+    genero: "Romance",
+    //dataLancamento: new Date(2022, 08, 1)
+    
+}
+
+//livro.titulo = "Pânico";
+
+console.log(livro);

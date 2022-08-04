@@ -15,7 +15,7 @@ export default class Operacao {
     }
 
     /*Pesquisar o funcionamento do construtor dentro de uma class, se ele exitir é obrigatório executar o método que ele representa;
-    Funcionamento e explos da interface; */
+    Funcionamento e explos da interface; **OLHAR NO FINAL DO CÓDIGO*/
 
     adicionar(valor: string): number {
 
@@ -60,24 +60,24 @@ export default class Operacao {
     }
 
     limparOperacao(): void{
-
+        console.log('limpar');
         this.tela.conteudo = "0";
         this.operacao = [];
+        
 
     }
 
     desfazerOperacao(): void{
-
         this.tela.conteudo;
         this.operacao.pop();
+        console.log('desfazer');
 
         //console.log(typeof(this.tela));
 
         //console.log(typeof(this.tela.conteudo));
+        
 
-
-
-        if (this.tela.conteudo.length > 1){
+        if (this.tela.conteudo.length > 0){
 
             const str = this.tela.conteudo;
 
@@ -85,7 +85,23 @@ export default class Operacao {
 
             console.log(usingSplit);
 
-            usingSplit.pop(); 
+             // remove elemento(do final)
+
+               // while (usingSplit.length > 0) {
+
+                    usingSplit.pop();
+
+                   // if (usingSplit.length <= 12) {
+                   //     break;
+                 //   }
+                    
+
+               // }
+
+            console.log(usingSplit);
+            this.tela.conteudo = usingSplit.join('');
+            
+            
         
 
             //const excluindo = usingSplit.slice(0, 4); 
@@ -131,4 +147,12 @@ export default class Operacao {
 as quais são invocadas no momento em que objetos desta classe são criadas. 
 Eles permitem inicializar campos internos da classe e 
 alocar recursos que um objeto da classe possa demandar. */
+
+
+
+
+
+
+
+
 

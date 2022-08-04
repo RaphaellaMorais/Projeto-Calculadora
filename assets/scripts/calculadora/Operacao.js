@@ -31,17 +31,21 @@ export default class Operacao {
         this.onCalculado(resultado);
     }
     limparOperacao() {
+        console.log('limpar');
         this.tela.conteudo = "0";
         this.operacao = [];
     }
     desfazerOperacao() {
         this.tela.conteudo;
         this.operacao.pop();
-        if (this.tela.conteudo.length > 1) {
+        console.log('desfazer');
+        if (this.tela.conteudo.length > 0) {
             const str = this.tela.conteudo;
             const usingSplit = str.split('', 12);
             console.log(usingSplit);
             usingSplit.pop();
+            console.log(usingSplit);
+            this.tela.conteudo = usingSplit.join('');
         }
     }
     get ultimaPosicao() {

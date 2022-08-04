@@ -5,14 +5,14 @@ export default class DataHora {
         private elementoHora: HTMLTimeElement | null = document.querySelector("#datetime time") //DOM possui uma serie de interfaces voltadas para elementos/acesso a elementos do HTML. 
     ) {                                                                                         //Declaramos a nossa propriedade/atributo e já definimos o valor p ela;
         this.renderizar();
-        setInterval(() => this.renderizar(), 1000);
+        setInterval(() => this.renderizar(), 1000);  //a cada 1000 segundos atualizar a informação; Vai fazer o : piscar;
     }
 
-    renderizar() {
+    renderizar() { 
 
-        const dataAtual = new Date();
-        const dia = dataAtual.getDate();
-        const mes = dataAtual.toLocaleDateString("pt-BR",{month: "long"});
+        const dataAtual = new Date(); // data atual
+        const dia = dataAtual.getDate(); //pegar dia
+        const mes = dataAtual.toLocaleDateString("pt-BR",{month: "long"}); //idioma, como vc quer o objeto - escrito
         const ano = dataAtual.getFullYear();
         const hora = dataAtual.getHours();
         const minuto = dataAtual.getMinutes().toString().padStart(2, '0');

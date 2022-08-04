@@ -8,8 +8,7 @@ export default class CalculadoraControle {   //Essa classe é como se fosse a sa
     constructor(
         private tela = new Tela(),
         private operacao = new Operacao({
-            onCalculado: (resultado: string) => this.tela.conteudo = resultado
-        }, [], tela)
+            onCalculado: (resultado: string) => this.tela.conteudo = resultado}, [], tela)
     ) {
 
 
@@ -130,6 +129,12 @@ export default class CalculadoraControle {   //Essa classe é como se fosse a sa
         }    
 
     }
+
+   // desfazerOperação() : void {
+
+     //   this.tela.conteudo.desfazerOperação();
+
+    //}
 
     // limparOperacao(): void{
 

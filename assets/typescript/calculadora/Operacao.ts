@@ -36,13 +36,13 @@ export default class Operacao {
         let resultado: string = "0";
 
         try {
-            resultado = (eval(this.operacao.join(""))).toString();
+            resultado = (eval(this.operacao.join(""))).toString(); // função + array
         } catch (e) {
             resultado = "ERRO";
         }
 
         return resultado;
-    }
+    } 
 
     calcular():void {
 
@@ -79,25 +79,18 @@ export default class Operacao {
 
         if (this.tela.conteudo.length > 1){
 
-
             const str = this.tela.conteudo;
 
-            const array = JSON.parse("[" + str + "]");
+            const usingSplit = str.split('',12);
 
-            console.log(typeof());
+            console.log(usingSplit);
 
-            usingSplit.pop();
+            usingSplit.pop(); 
+        
 
+            //const excluindo = usingSplit.slice(0, 4); 
 
-
-
-            /*const str = this.tela.conteudo;
-
-            const usingSplit = str.split(",");
-
-            console.log(typeof(usingSplit));
-
-            usingSplit.pop(); */
+            //console.log(typeof(usingSplit));
             
             /*var str = this.tela.conteudo;
 

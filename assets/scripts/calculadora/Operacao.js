@@ -39,8 +39,8 @@ export default class Operacao {
         this.operacao.pop();
         if (this.tela.conteudo.length > 1) {
             const str = this.tela.conteudo;
-            const array = JSON.parse("[" + str + "]");
-            console.log(typeof ());
+            const usingSplit = str.split('', 12);
+            console.log(usingSplit);
             usingSplit.pop();
         }
     }

@@ -16,15 +16,18 @@ export default class Tela {
 
         if (this.elemento) {
 
-            this.elemento.innerHTML = valor.toString().replace(".",",");
+            this.elemento.innerHTML = valor.toString().replace(".",","); 
         }
 
     }
 
     get conteudo(): string {
 
-        return this.elemento ? this.elemento.innerHTML: "0";
+        return this.elemento ? this.elemento.innerHTML: "0"; //Se o elemento existe então retorna o elemento innerHTML, senão retorna o "0";
 
     }
 }
  /*pesquisar sobre operador ternário = if em uma única linha */
+
+ //operador ternário - frequentemente usado como um atalho para instrução if;
+ //condição ? expr1 : expr2 

@@ -3,9 +3,10 @@ import Operacao from "./Operacao.js";
 import Tela from "./Tela.js";
 
 
-export default class CalculadoraControle {   //Essa classe é como se fosse a sala de controle da calculadora;
+export default class CalculadoraControle {
+     //Essa classe é como se fosse a sala de controle da calculadora;
 
-    constructor(
+    constructor(  //Argumentos que a classe irá receber ao ser instanciada;
         private tela = new Tela(),
         private operacao = new Operacao({
             onCalculado: (resultado: string) => this.tela.conteudo = resultado}, [], tela)
@@ -50,6 +51,7 @@ export default class CalculadoraControle {   //Essa classe é como se fosse a sa
                     break;
 
                     case "ponto":
+                        //this.ponto();
 
                     break;
 
@@ -64,6 +66,7 @@ export default class CalculadoraControle {   //Essa classe é como se fosse a sa
                     break;
 
                     case "porcentagem":
+                        //this.operacao.calcular();
 
                     break;
 
@@ -78,6 +81,8 @@ export default class CalculadoraControle {   //Essa classe é como se fosse a sa
 
         });
     }
+
+ 
 
     calcular(): void {
 

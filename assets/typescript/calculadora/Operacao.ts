@@ -15,7 +15,7 @@ export default class Operacao {
     }
 
     /*Pesquisar o funcionamento do construtor dentro de uma class, se ele exitir é obrigatório executar o método que ele representa;
-    Funcionamento e explos da interface; **OLHAR NO FINAL DO CÓDIGO*/
+    Funcionamento e explos da interface; **OLHAR ARQUIVO SEPARADO - interface.ts*/
 
     adicionar(valor: string): number {
 
@@ -59,6 +59,7 @@ export default class Operacao {
 
     }
 
+
     limparOperacao(): void{
         console.log('limpar');
         this.tela.conteudo = "0";
@@ -97,12 +98,9 @@ export default class Operacao {
                // }
 
             console.log(usingSplit);
-            this.tela.conteudo = usingSplit.join('');
-             
             
-
-        
-
+            this.tela.conteudo = usingSplit.join(''); //O método join()  junta todos os elementos de um array em uma string e retorna esta string.
+             
 
             //const excluindo = usingSplit.slice(0, 4); 
 
@@ -116,7 +114,6 @@ export default class Operacao {
 
             //this.tela.conteudo.();
         }
-        
 
     }
 

@@ -91,7 +91,10 @@ interface IMenu {
 
 let menu: IMenu = {
     categorias: [frontEnd, backEnd]
+
 };
+
+//----------------------
 
 interface ITudo {
     [indice: number]: string;

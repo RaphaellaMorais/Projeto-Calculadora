@@ -41,7 +41,7 @@ export default class Operacao {
         console.log('desfazer');
         if (this.tela.conteudo.length > 0) {
             let str = this.tela.conteudo;
-            const usingSplit = str.split('', 12);
+            const usingSplit = str.split(' ', 12);
             usingSplit.pop();
             console.log(usingSplit);
             this.tela.conteudo = usingSplit.join('');

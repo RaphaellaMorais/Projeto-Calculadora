@@ -21,13 +21,13 @@ export default class CalculadoraControle {
 
     eventosBotoes(): void {
 
-        document.querySelectorAll("#teclado button").forEach(elemento => {
+        document.querySelectorAll("#teclado button").forEach(elemento => { //vai trazer a coleção de botões;
 
-            elemento.addEventListener("click", (evento: Event) => {
+            elemento.addEventListener("click", (evento: Event) => { //toda vez q encontrar o botão adc o evento de click;
 
                 const target = evento.target as HTMLButtonElement;
 
-                switch(target.id){
+                switch(target.id){ //A instrução switch é usada para executar diferentes ações com base em diferentes condições.
 
                     case "zero":
                     case "um":
@@ -51,7 +51,7 @@ export default class CalculadoraControle {
                     break;
 
                     case "ponto":
-                        //this.ponto();
+                       // this.ponto());
 
                     break;
 
@@ -66,7 +66,7 @@ export default class CalculadoraControle {
                     break;
 
                     case "porcentagem":
-                        //this.operacao.calcular();
+                        this.calcularPorcentagem();
 
                     break;
 
@@ -82,7 +82,19 @@ export default class CalculadoraControle {
         });
     }
 
+    calcularPorcentagem(): void{
+        console.log('porcentagem');
+        
+        this.tela.conteudo;
+        
+        const valorTela = parseInt(this.tela.conteudo);
+
+        let calculandoPorcentagem = (valorTela / 100);
+
+        console.log(calculandoPorcentagem);
  
+    } 
+
 
     calcular(): void {
 

@@ -42,6 +42,7 @@ export default class CalculadoraControle {
                         this.operacao.desfazerOperacao();
                         break;
                     case "porcentagem":
+                        this.calcularPorcentagem();
                         break;
                     case "igual":
                         this.calcular();
@@ -49,6 +50,13 @@ export default class CalculadoraControle {
                 }
             });
         });
+    }
+    calcularPorcentagem() {
+        console.log('porcentagem');
+        this.tela.conteudo;
+        const valorTela = parseInt(this.tela.conteudo);
+        let calculandoPorcentagem = (valorTela / 100);
+        console.log(calculandoPorcentagem);
     }
     calcular() {
         this.operacao.calcular();

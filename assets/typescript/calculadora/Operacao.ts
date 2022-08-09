@@ -80,8 +80,6 @@ export default class Operacao {
         //console.log(typeof(this.tela.conteudo));
         
 
-
-
         if (this.tela.conteudo.length > 0){
 
             let str = this.tela.conteudo;

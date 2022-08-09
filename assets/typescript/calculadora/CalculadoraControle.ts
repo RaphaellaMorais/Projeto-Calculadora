@@ -83,6 +83,7 @@ export default class CalculadoraControle {
     }
 
     adicionarPonto(ponto: string): void {
+        console.log('ponto');
 
         let valornaTela = this.tela.conteudo.length;
 
@@ -94,10 +95,11 @@ export default class CalculadoraControle {
 
         if(valornaTela > 0){
 
-            let juntarValores = [];
+            this.tela.conteudo = ponto.toString();
 
         }
 
+    
     }
 
 
@@ -162,8 +164,6 @@ export default class CalculadoraControle {
         let calculandoPorcentagem = (valorTela / 100);
 
         //let calculoTeste = (calculandoPorcentagem * valorTela);
-        
-    
 
         console.log(calculandoPorcentagem + porcentagem);
 
@@ -171,24 +171,36 @@ export default class CalculadoraControle {
 
     }*/
 
-    calcularPorcentagem(porcentagem: string): void{
+    calcularPorcentagem(porcentagem: string): any {
         console.log('porcentagem');
-        
+
         let valorTela = parseInt(this.tela.conteudo);
-
-        let porcent = parseInt(this.tela.conteudo) / 100; //(valorTela / 100);
-
-        let calculandoPorcentagem = (valorTela * porcent) / 100;
-
-        //let calculoTeste = (calculandoPorcentagem * valorTela);
-
-        let valorExibir =  valorTela - calculandoPorcentagem;
         
-        console.log(valorExibir + porcentagem);
+            if(this.tela.conteudo.length === 3) {
 
-        this.tela.conteudo = valorExibir + porcentagem;
+            let resultadoPorcent = valorTela * valorTela / 100 - valorTela;
+       
+            console.log(resultadoPorcent);}
 
-    }
+            else {
+            
+                let calculandoPorcentagem = valorTela / 100;
+
+                console.log(`${calculandoPorcentagem}${porcentagem}`);
+
+                this.tela.conteudo = `${calculandoPorcentagem}${porcentagem}`;
+            }
+        
+
+            //if(this.operacao.calcularPorcentagem) {
+
+             //  let resultadoPorcent = (valorTela * valorTela) / 100;
+
+             //   return resultadoPorcent;
+
+            
+
+        }
 
 }
 

@@ -53,12 +53,13 @@ export default class CalculadoraControle {
         });
     }
     adicionarPonto(ponto) {
+        console.log('ponto');
         let valornaTela = this.tela.conteudo.length;
         if (valornaTela > 0) {
             this.tela.conteudo = ponto;
         }
         if (valornaTela > 0) {
-            let juntarValores = [];
+            this.tela.conteudo = ponto.toString();
         }
     }
     calcular() {
@@ -91,11 +92,15 @@ export default class CalculadoraControle {
     calcularPorcentagem(porcentagem) {
         console.log('porcentagem');
         let valorTela = parseInt(this.tela.conteudo);
-        let porcent = parseInt(this.tela.conteudo) / 100;
-        let calculandoPorcentagem = (valorTela * porcent) / 100;
-        let valorExibir = valorTela - calculandoPorcentagem;
-        console.log(valorExibir + porcentagem);
-        this.tela.conteudo = valorExibir + porcentagem;
+        if (this.tela.conteudo.length === 3) {
+            let resultadoPorcent = valorTela * valorTela / 100 - valorTela;
+            console.log(resultadoPorcent);
+        }
+        else {
+            let calculandoPorcentagem = valorTela / 100;
+            console.log(`${calculandoPorcentagem}${porcentagem}`);
+            this.tela.conteudo = `${calculandoPorcentagem}${porcentagem}`;
+        }
     }
 }
 //# sourceMappingURL=CalculadoraControle.js.map

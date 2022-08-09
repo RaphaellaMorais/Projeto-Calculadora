@@ -34,6 +34,7 @@ export default class CalculadoraControle {
                         this.adicionarOperador(target.dataset.valor);
                         break;
                     case "ponto":
+                        this.adicionarPonto(target.dataset.valor);
                         break;
                     case "limpar":
                         this.operacao.limparOperacao();
@@ -42,7 +43,7 @@ export default class CalculadoraControle {
                         this.operacao.desfazerOperacao();
                         break;
                     case "porcentagem":
-                        this.calcularPorcentagem();
+                        this.calcularPorcentagem(target.dataset.valor);
                         break;
                     case "igual":
                         this.calcular();
@@ -51,12 +52,14 @@ export default class CalculadoraControle {
             });
         });
     }
-    calcularPorcentagem() {
-        console.log('porcentagem');
-        this.tela.conteudo;
-        const valorTela = parseInt(this.tela.conteudo);
-        let calculandoPorcentagem = (valorTela / 100);
-        console.log(calculandoPorcentagem);
+    adicionarPonto(ponto) {
+        let valornaTela = this.tela.conteudo.length;
+        if (valornaTela > 0) {
+            this.tela.conteudo = ponto;
+        }
+        if (valornaTela > 0) {
+            let juntarValores = [];
+        }
     }
     calcular() {
         this.operacao.calcular();
@@ -84,6 +87,15 @@ export default class CalculadoraControle {
             }
             this.adicionarOperacao(operador);
         }
+    }
+    calcularPorcentagem(porcentagem) {
+        console.log('porcentagem');
+        let valorTela = parseInt(this.tela.conteudo);
+        let porcent = parseInt(this.tela.conteudo) / 100;
+        let calculandoPorcentagem = (valorTela * porcent) / 100;
+        let valorExibir = valorTela - calculandoPorcentagem;
+        console.log(valorExibir + porcentagem);
+        this.tela.conteudo = valorExibir + porcentagem;
     }
 }
 //# sourceMappingURL=CalculadoraControle.js.map

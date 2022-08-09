@@ -51,7 +51,7 @@ export default class CalculadoraControle {
                     break;
 
                     case "ponto":
-                       // this.ponto());
+                        this.adicionarPonto(<string>target.dataset.valor);
 
                     break;
 
@@ -66,7 +66,7 @@ export default class CalculadoraControle {
                     break;
 
                     case "porcentagem":
-                        this.calcularPorcentagem();
+                        this.calcularPorcentagem(<string>target.dataset.valor);
 
                     break;
 
@@ -82,18 +82,23 @@ export default class CalculadoraControle {
         });
     }
 
-    calcularPorcentagem(): void{
-        console.log('porcentagem');
-        
-        this.tela.conteudo;
-        
-        const valorTela = parseInt(this.tela.conteudo);
+    adicionarPonto(ponto: string): void {
 
-        let calculandoPorcentagem = (valorTela / 100);
+        let valornaTela = this.tela.conteudo.length;
 
-        console.log(calculandoPorcentagem);
- 
-    } 
+        if (valornaTela > 0) {
+
+            this.tela.conteudo = ponto;
+
+        } 
+
+        if(valornaTela > 0){
+
+            let juntarValores = [];
+
+        }
+
+    }
 
 
     calcular(): void {
@@ -147,21 +152,50 @@ export default class CalculadoraControle {
 
     }
 
-   // desfazerOperação() : void {
+    /*calcularPorcentagem(porcentagem: string): void{
+        console.log('porcentagem');
+        
+        //this.tela.conteudo;
+        
+        let valorTela = parseInt(this.tela.conteudo);
 
-     //   this.tela.conteudo.desfazerOperação();
+        let calculandoPorcentagem = (valorTela / 100);
 
-    //}
+        //let calculoTeste = (calculandoPorcentagem * valorTela);
+        
+    
 
-    // limparOperacao(): void{
+        console.log(calculandoPorcentagem + porcentagem);
 
-    //     this.tela.conteudo = "0";
-    //     this.operacao.operacao = [];
+        this.tela.conteudo = calculandoPorcentagem +porcentagem;
 
-    // }
+    }*/
 
+    calcularPorcentagem(porcentagem: string): void{
+        console.log('porcentagem');
+        
+        let valorTela = parseInt(this.tela.conteudo);
+
+        let porcent = parseInt(this.tela.conteudo) / 100; //(valorTela / 100);
+
+        let calculandoPorcentagem = (valorTela * porcent) / 100;
+
+        //let calculoTeste = (calculandoPorcentagem * valorTela);
+
+        let valorExibir =  valorTela - calculandoPorcentagem;
+        
+        console.log(valorExibir + porcentagem);
+
+        this.tela.conteudo = valorExibir + porcentagem;
+
+    }
 
 }
+
+
+
+
+
 
 /*Uma classe é uma representação de um tipo de objeto. Uma estrutura que descreve o objeto;
 

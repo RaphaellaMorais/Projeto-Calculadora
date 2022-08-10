@@ -85,21 +85,26 @@ export default class CalculadoraControle {
     adicionarPonto(ponto: string): void {
         console.log('ponto');
 
-        let valornaTela = this.tela.conteudo.length;
+        ponto = String(this.operacao.ultimaPosicao.toString() + ponto.toString());
 
-        if (valornaTela > 0) {
+        this.operacao.ultimaPosicao = ponto.toString();
 
-            this.tela.conteudo = ponto;
 
-        } 
+      /*  this.adicionarOperador(ponto);
 
-        if(valornaTela > 0){
+        let teste = this.tela.conteudo + ponto;
 
-            this.tela.conteudo = ponto.toString();
+        this.tela.conteudo = teste;
 
+
+
+        console.log(ponto.includes('.'));
+        
+        if(ponto.includes('.')){
+
+            
         }
-
-    
+        */
     }
 
 
@@ -112,12 +117,22 @@ export default class CalculadoraControle {
 
         this.operacao.adicionar(valor);
 
-        // console.log(this.operacao.length);
+        //console.log(this.operacao.length);
     }
 
     adicionarNumero(numero: number): void {
 
-        if(isNaN(Number(this.operacao.ultimaPosicao))) {
+        if(this.operacao.ultimaPosicao.includes('.')) {
+
+           // this.adicionarOperacao(numero.toString());
+
+            console.log("achei o ponto");
+
+            numero = Number(this.operacao.ultimaPosicao.toString() + numero.toString());
+
+            this.operacao.ultimaPosicao = numero.toString();
+
+        } else if(isNaN(Number(this.operacao.ultimaPosicao))) {
 
             this.adicionarOperacao(numero.toString());
 
@@ -131,7 +146,21 @@ export default class CalculadoraControle {
 
         this.tela.conteudo = numero.toString();
 
+        /*if(isNaN(Number(this.operacao.ultimaPosicao))) {
 
+            this.adicionarOperacao(numero.toString());
+
+        } else {
+
+            numero = Number(this.operacao.ultimaPosicao.toString() + numero.toString());
+
+            this.operacao.ultimaPosicao = numero.toString();
+        }
+
+
+        this.tela.conteudo = numero.toString();
+
+*/
     }
 
     adicionarOperador(operador: string): void {
@@ -171,7 +200,7 @@ export default class CalculadoraControle {
 
     }*/
 
-    calcularPorcentagem(porcentagem: string): any {
+    /*calcularPorcentagem(porcentagem: string): any {
         console.log('porcentagem');
 
         let valorTela = parseInt(this.tela.conteudo);
@@ -198,9 +227,40 @@ export default class CalculadoraControle {
 
              //   return resultadoPorcent;
 
-            
+        }*/
+
+    calcularPorcentagem(porcentagem: string): any {
+        
+        console.log('porcentagem');
+
+        let valorTela = this.operacao.length.for();//parseInt(this.tela.conteudo);
+        //let valorPorcent = parseInt(this.tela.conteudo);
+
+        let valorPorcent = valorTela / 100;
+
+        function calculandoPorcentagem (v1: any, v2: any, calc: any, resultadoPorcent: any): any {
+
+            v1 = valorTela;
+            v2 = valorPorcent;
+            calc = (valorTela * valorPorcent) / 100;
+            resultadoPorcent = valorTela - calc;
+
+            return resultadoPorcent;
 
         }
+        
+        this.operacao.adicionar;
+
+        console.log(`${valorPorcent}${porcentagem}`);
+
+        this.tela.conteudo = `${valorPorcent}${porcentagem}`;
+
+        
+       
+
+    
+    
+    }
 
 }
 

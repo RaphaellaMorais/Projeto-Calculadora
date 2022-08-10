@@ -54,13 +54,8 @@ export default class CalculadoraControle {
     }
     adicionarPonto(ponto) {
         console.log('ponto');
-        let valornaTela = this.tela.conteudo.length;
-        if (valornaTela > 0) {
-            this.tela.conteudo = ponto;
-        }
-        if (valornaTela > 0) {
-            this.tela.conteudo = ponto.toString();
-        }
+        ponto = String(this.operacao.ultimaPosicao.toString() + ponto.toString());
+        this.operacao.ultimaPosicao = ponto.toString();
     }
     calcular() {
         this.operacao.calcular();
@@ -69,7 +64,12 @@ export default class CalculadoraControle {
         this.operacao.adicionar(valor);
     }
     adicionarNumero(numero) {
-        if (isNaN(Number(this.operacao.ultimaPosicao))) {
+        if (this.operacao.ultimaPosicao.includes('.')) {
+            console.log("achei o ponto");
+            numero = Number(this.operacao.ultimaPosicao.toString() + numero.toString());
+            this.operacao.ultimaPosicao = numero.toString();
+        }
+        else if (isNaN(Number(this.operacao.ultimaPosicao))) {
             this.adicionarOperacao(numero.toString());
         }
         else {
@@ -91,16 +91,18 @@ export default class CalculadoraControle {
     }
     calcularPorcentagem(porcentagem) {
         console.log('porcentagem');
-        let valorTela = parseInt(this.tela.conteudo);
-        if (this.tela.conteudo.length === 3) {
-            let resultadoPorcent = valorTela * valorTela / 100 - valorTela;
-            console.log(resultadoPorcent);
+        let valorTela = this.operacao.length.for();
+        let valorPorcent = valorTela / 100;
+        function calculandoPorcentagem(v1, v2, calc, resultadoPorcent) {
+            v1 = valorTela;
+            v2 = valorPorcent;
+            calc = (valorTela * valorPorcent) / 100;
+            resultadoPorcent = valorTela - calc;
+            return resultadoPorcent;
         }
-        else {
-            let calculandoPorcentagem = valorTela / 100;
-            console.log(`${calculandoPorcentagem}${porcentagem}`);
-            this.tela.conteudo = `${calculandoPorcentagem}${porcentagem}`;
-        }
+        this.operacao.adicionar;
+        console.log(`${valorPorcent}${porcentagem}`);
+        this.tela.conteudo = `${valorPorcent}${porcentagem}`;
     }
 }
 //# sourceMappingURL=CalculadoraControle.js.map

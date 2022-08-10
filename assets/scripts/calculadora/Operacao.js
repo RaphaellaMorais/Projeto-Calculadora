@@ -47,6 +47,25 @@ export default class Operacao {
             this.tela.conteudo = usingSplit.join('');
         }
     }
+    calcularPorcentagem(porcentagem) {
+        console.log('porcentagem');
+        let valorTela = this.operacao.shift();
+        let valorPorcent = this.operacao.pop();
+        console.log(typeof (valorTela));
+        console.log(valorTela);
+        if (this.operacao.length > 0) {
+            let valorPorcentagem = valorPorcent;
+            let calculandoPorcentagem = (Number(valorTela) * Number(valorPorcentagem)) / 100;
+            let resultadoPorcentagem = Number(valorTela) - calculandoPorcentagem;
+            console.log(`${resultadoPorcentagem}${porcentagem}`);
+            this.tela.conteudo = `${resultadoPorcentagem}`;
+        }
+        else {
+            let valorPorcent = Number(valorTela) / 100;
+            console.log(`${valorPorcent}${porcentagem}`);
+            this.tela.conteudo = `${valorPorcent}${porcentagem}`;
+        }
+    }
     get ultimaPosicao() {
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";
     }

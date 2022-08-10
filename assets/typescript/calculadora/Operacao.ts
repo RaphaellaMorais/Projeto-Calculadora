@@ -7,8 +7,6 @@ interface OperacaoOpcoes {
 export default class Operacao {
 
     private onCalculado: any;
-    
-    calcularPorcentagem: any;
 
     constructor(opts: OperacaoOpcoes, private operacao: string[] = [], private tela: Tela) {
 
@@ -87,38 +85,50 @@ export default class Operacao {
         
             let usingSplit = str.split('', 12);
 
-            //console.log(usingSplit);
-
-               // while (usingSplit.length > 0) {
-
                     usingSplit.pop(); // remove elemento(do final)
-
-                   // if (usingSplit.length <= 12) {
-                   //     break;
-                 //   }
-                    
-
-               // }
 
             console.log(usingSplit);
             
             this.tela.conteudo = usingSplit.join(''); //O método join()  junta todos os elementos de um array em uma string e retorna esta string.
-            
-
-            //const excluindo = usingSplit.slice(0, 4); 
-
-            //console.log(typeof(usingSplit));
-            
-            /*var str = this.tela.conteudo;
-
-            [...str];
-            
-            console.log(typeof(str));*/
-
-            //this.tela.conteudo.();
+        
         }
     
 
+    }
+
+    calcularPorcentagem(porcentagem: string): any {
+        
+        console.log('porcentagem');
+
+        let valorTela = this.operacao.shift();
+
+        let valorPorcent = this.operacao.pop();
+
+        console.log(typeof(valorTela));
+        console.log(valorTela);
+
+            if(this.operacao.length > 0){
+
+                let valorPorcentagem = valorPorcent;
+
+                let calculandoPorcentagem = (Number(valorTela) * Number(valorPorcentagem)) / 100;
+
+                let resultadoPorcentagem = Number(valorTela) - calculandoPorcentagem;
+
+                console.log(`${resultadoPorcentagem}${porcentagem}`);
+
+                this.tela.conteudo = `${resultadoPorcentagem}`;
+
+            } else {
+
+        let valorPorcent = Number(valorTela) / 100;
+
+        console.log(`${valorPorcent}${porcentagem}`);
+
+        this.tela.conteudo = `${valorPorcent}${porcentagem}`;
+        }
+
+    
     }
 
     get ultimaPosicao(): string {

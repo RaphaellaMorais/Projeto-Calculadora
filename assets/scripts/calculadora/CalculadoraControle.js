@@ -43,7 +43,7 @@ export default class CalculadoraControle {
                         this.operacao.desfazerOperacao();
                         break;
                     case "porcentagem":
-                        this.calcularPorcentagem(target.dataset.valor);
+                        this.operacao.calcularPorcentagem(target.dataset.valor);
                         break;
                     case "igual":
                         this.calcular();
@@ -88,21 +88,6 @@ export default class CalculadoraControle {
             }
             this.adicionarOperacao(operador);
         }
-    }
-    calcularPorcentagem(porcentagem) {
-        console.log('porcentagem');
-        let valorTela = this.operacao.length.for();
-        let valorPorcent = valorTela / 100;
-        function calculandoPorcentagem(v1, v2, calc, resultadoPorcent) {
-            v1 = valorTela;
-            v2 = valorPorcent;
-            calc = (valorTela * valorPorcent) / 100;
-            resultadoPorcent = valorTela - calc;
-            return resultadoPorcent;
-        }
-        this.operacao.adicionar;
-        console.log(`${valorPorcent}${porcentagem}`);
-        this.tela.conteudo = `${valorPorcent}${porcentagem}`;
     }
 }
 //# sourceMappingURL=CalculadoraControle.js.map

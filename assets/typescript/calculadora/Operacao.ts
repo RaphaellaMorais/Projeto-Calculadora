@@ -111,12 +111,12 @@ export default class Operacao {
 
             } else {
 
-        let valorPorcent = Number(valorTela) / 100;
+                let valorPorcent = Number(valorTela) / 100;
 
-        console.log(`${valorPorcent}${porcentagem}`);
+                console.log(`${valorPorcent}${porcentagem}`);
 
-        this.tela.conteudo = `${valorPorcent}${porcentagem}`;
-        }
+                this.tela.conteudo = `${valorPorcent}${porcentagem}`;
+            }
 
     }
 

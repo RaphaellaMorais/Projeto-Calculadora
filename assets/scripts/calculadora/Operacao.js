@@ -38,26 +38,26 @@ export default class Operacao {
     desfazerOperacao() {
         this.tela.conteudo;
         this.operacao.pop();
-        console.log('desfazer');
+        console.log('Desfazer');
         if (this.tela.conteudo.length > 0) {
             let str = this.tela.conteudo;
             let usingSplit = str.split('', 12);
             usingSplit.pop();
             console.log(usingSplit);
             this.tela.conteudo = usingSplit.join('');
+            if (usingSplit.length === 0) {
+                this.tela.conteudo = "0";
+            }
         }
     }
     calcularPorcentagem(porcentagem) {
-        console.log('porcentagem');
+        console.log('Porcentagem');
         let valorTela = this.operacao.shift();
         let valorPorcent = this.operacao.pop();
-        console.log(typeof (valorTela));
-        console.log(valorTela);
         if (this.operacao.length > 0) {
-            let valorPorcentagem = valorPorcent;
-            let calculandoPorcentagem = (Number(valorTela) * Number(valorPorcentagem)) / 100;
+            let calculandoPorcentagem = (Number(valorTela) * Number(valorPorcent)) / 100;
             let resultadoPorcentagem = Number(valorTela) - calculandoPorcentagem;
-            console.log(`${resultadoPorcentagem}${porcentagem}`);
+            console.log(`${resultadoPorcentagem}`);
             this.tela.conteudo = `${resultadoPorcentagem}`;
         }
         else {

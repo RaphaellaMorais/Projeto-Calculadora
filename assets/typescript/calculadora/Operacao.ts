@@ -14,8 +14,6 @@ export default class Operacao {
 
     }
 
-    /*Pesquisar o funcionamento do construtor dentro de uma class, se ele exitir é obrigatório executar o método que ele representa;
-    Funcionamento e explos da interface; **OLHAR ARQUIVO SEPARADO - interface.ts*/
 
     adicionar(valor: string): number {
 
@@ -63,34 +61,31 @@ export default class Operacao {
     limparOperacao(): void{
         console.log('limpar');
         this.tela.conteudo = "0";
-        this.operacao = [];
-        
+        this.operacao = []; 
 
     }
 
     desfazerOperacao(): void{
         this.tela.conteudo;
         this.operacao.pop();
-        console.log('desfazer');
-
-        //console.log(typeof(this.tela));
-
-        //console.log(typeof(this.tela.conteudo));
-        
+        console.log('Desfazer');
 
         if (this.tela.conteudo.length > 0){
 
             let str = this.tela.conteudo;
-
         
             let usingSplit = str.split('', 12);
 
-                    usingSplit.pop(); // remove elemento(do final)
+                    usingSplit.pop(); 
 
             console.log(usingSplit);
             
-            this.tela.conteudo = usingSplit.join(''); //O método join()  junta todos os elementos de um array em uma string e retorna esta string.
+            this.tela.conteudo = usingSplit.join(''); //O método join() junta todos os elementos de um array em uma string e retorna esta string.
         
+            if (usingSplit.length === 0){
+                
+                this.tela.conteudo = "0";
+            }
         }
     
 
@@ -98,24 +93,19 @@ export default class Operacao {
 
     calcularPorcentagem(porcentagem: string): any {
         
-        console.log('porcentagem');
+        console.log('Porcentagem');
 
-        let valorTela = this.operacao.shift();
+        let valorTela = this.operacao.shift(); //remove o primeiro elemento de um array e retorna esse elemento. 
 
-        let valorPorcent = this.operacao.pop();
-
-        console.log(typeof(valorTela));
-        console.log(valorTela);
+        let valorPorcent = this.operacao.pop(); //remove o último elemento de um array e retorna aquele elemento.
 
             if(this.operacao.length > 0){
 
-                let valorPorcentagem = valorPorcent;
-
-                let calculandoPorcentagem = (Number(valorTela) * Number(valorPorcentagem)) / 100;
+                let calculandoPorcentagem = (Number(valorTela) * Number(valorPorcent)) / 100;
 
                 let resultadoPorcentagem = Number(valorTela) - calculandoPorcentagem;
 
-                console.log(`${resultadoPorcentagem}${porcentagem}`);
+                console.log(`${resultadoPorcentagem}`);
 
                 this.tela.conteudo = `${resultadoPorcentagem}`;
 
@@ -128,7 +118,6 @@ export default class Operacao {
         this.tela.conteudo = `${valorPorcent}${porcentagem}`;
         }
 
-    
     }
 
     get ultimaPosicao(): string {
@@ -150,13 +139,18 @@ export default class Operacao {
     }
 }
 
+
+
+
 /*O método substr()retorna uma parte da string O especificado no índice especificado e
  estende-se posteriormente por um determinado número. */
 
 /*Construtores são basicamente funções de inicialização de uma classe, 
 as quais são invocadas no momento em que objetos desta classe são criadas. 
 Eles permitem inicializar campos internos da classe e 
-alocar recursos que um objeto da classe possa demandar. */
+alocar recursos que um objeto da classe possa demandar. 
+
+//console.log(typeof());*/
 
 
 

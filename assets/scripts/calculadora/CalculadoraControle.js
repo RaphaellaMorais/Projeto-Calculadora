@@ -62,10 +62,10 @@ export default class CalculadoraControle {
     }
     adicionarOperacao(valor) {
         this.operacao.adicionar(valor);
+        console.log(this.operacao.length);
     }
     adicionarNumero(numero) {
         if (this.operacao.ultimaPosicao.includes('.')) {
-            console.log("achei o ponto");
             numero = Number(this.operacao.ultimaPosicao.toString() + numero.toString());
             this.operacao.ultimaPosicao = numero.toString();
         }
